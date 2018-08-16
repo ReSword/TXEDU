@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			html,
+			body {
+				height: 100%;
+				width: 100%;
+			}
+			input {
+				outline: none;
+				border: none;
+			}
+			.header {
+				width: 100%;
+				height: 78px;
+				background-color: blueviolet;
+			}
+			
+			.content {
+				width: 100%;
+				height: 1014px;
+				background-color: turquoise;
+				padding: 20px;
+			}
+			
+			.content .box {
+				width: 1064px;
+				height: 100%;
+				background-color: aquamarine;
+				margin: 0 auto;
+			}
+			
+			.content .box .left_box {
+				width: 782px;
+				height: 100%;
+				background-color: palevioletred;
+				float: left;
+			}
+			
+			.content .box .left_box .search_result {
+				width: 100%;
+				height: 588px;
+				background-color: brown;
+				padding: 20px;
+				overflow: hidden;
+				box-sizing: border-box;
+			}
+			.search_result>h2>img {
+				margin-right: 11px;
+			}
+			/*调解文本粗细*/
+			
+			.search_result>h2 {
+				font-weight: 500;
+				margin-bottom: 20px;
+			}
+			.search_result .search_res_no{
+				width: 100%;
+				background-color: white;
+				height: 100%;
+				position: relative;
+			}
+			.search_res_no .sea_res_div{
+				top: 50%;
+				left: 50%;
+				position: absolute;
+				transform: translate(-50%,-50%);
+			}
+			.sea_res_div>img{
+				float: left;
+			}
+			.sea_res_div>p{
+				width: 420px;
+			}
+			.sea_res_p1{
+				margin-top: 20px;
+			}
+			.content .box .left_box .reco_course {
+				width: 100%;
+				height: 406px;
+				background-color: teal;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			.reco_course>h2{
+				font-weight: 500;
+				margin-bottom: 20px;
+			}
+			.reco_course>ul>li {
+				/*去掉点*/
+				list-style: none;
+				/*横向排列*/
+				float: left;
+				margin-right: 30px;
+				width: 224px;
+				height: 273px;
+				background-color: white;
+			}
+			
+			.reco_course>ul>li:nth-last-child(1) {
+				margin-right: 0px;
+			}
+			
+			.reco_course li>img {
+				width: 224px;
+				height: 161px;
+				border-bottom: 3px solid gold;
+				margin-bottom: 17px;
+			}
+			
+			.reco_course li:nth-child(2)>img {
+				border-bottom: 3px solid greenyellow;
+			}
+			
+			.reco_course li:nth-child(3)>img {
+				border-bottom: 3px solid #00FFFF;
+			}
+			
+			.reco_course p {
+				margin-left: 13px;
+				width: 203px;
+				word-break: break-word;
+				font-size: 15px;
+			}
+			
+			.reco_course .p1 {
+				width: 203px;
+				text-decoration: none;
+				font-size: 12px;
+				margin-bottom: 13px;
+				margin-left: 13px;
+				display: block;
+				color: black;
+				/*单行省略*/
+				/*overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;*/
+			}
+			
+			.reco_course .p1:hover {
+				color: #87CEFA;
+			}
+			
+			.reco_course .p2 {
+				/*多行省略*/
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				/*代表多少行*/
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+			}
+			.content .box .left_box>div {
+				margin-bottom: 20px;
+			}
+			
+			.content .box .left_box>div:nth-last-child(1) {
+				margin-bottom: 0px;
+			}
+			
+			.content .box .right-box {
+				width: 267px;
+				height: 100%;
+				background-color: white;
+				float: right;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			
+			.right-box>h2>img {
+				margin-right: 11px;
+			}
+			/*调解文本粗细*/
+			
+			.right-box>h2 {
+				font-weight: 500;
+				margin-bottom: 20px;
+			}
+			
+			.right-box .right_button {
+				width: 226px;
+				height: 35px;
+				background-color: white;
+				margin-bottom: 20px;
+				position: relative;
+				padding-top: 3px;
+			}
+			
+			#left_point {
+				display: block;
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				margin-right: 0;
+				left: 5px;
+				bottom: 0;
+				background-image: url(img/icons.png);
+				background-position-y: -35px;
+				margin-right: 10px;
+			}
+			
+			#right_point {
+				display: block;
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				background-image: url(img/icons.png);
+				background-position-y: -35px;
+				margin-right: 8px;
+			}
+			
+			#rig_but_1 {
+				text-align: center;
+				width: 101.5px;
+				font-size: 13px;
+				height: 32px;
+				display: block;
+				background-color: white;
+				float: left;
+				margin-left: 10px;
+				border-top: 1px solid gainsboro;
+				border-left: 1px solid gainsboro;
+				border-right: 1px solid gainsboro;
+				border-bottom: 1px solid white;
+			}
+			
+			#rig_but_2 {
+				text-align: center;
+				width: 101.5px;
+				font-size: 13px;
+				height: 32px;
+				display: block;
+				background-color: white;
+				float: left;
+				border-top: 1px solid white;
+				border-left: 1px solid white;
+				border-right: 1px solid white;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.right-box>ul>li {
+				list-style: none;
+				width: 226px;
+				height: 161px;
+				margin-bottom: 22px;
+				position: relative;
+			}
+			
+			.right-box>ul>li>a {
+				width: 226px;
+				display: block;
+				height: 161px;
+				margin-bottom: 22px;
+				position: relative;
+			}
+			
+			.right-box>ul>li>a>img {
+				width: 226px;
+				height: 161px;
+			}
+			
+			.right-box>ul>li>a>p {
+				width: 226px;
+				height: 25px;
+				position: absolute;
+				color: white;
+				bottom: 0;
+				left: 0;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+			
+			.right-box li>a>p>span {
+				width: 20px;
+				height: 25px;
+				background-color: gold;
+				/*span没有区域*/
+				display: inline-block;
+				/*文本居中*/
+				text-align: center;
+				line-height: 25px;
+				margin-right: 5px;
+			}
+			
+			.right-box>ul>li:nth-child(2)>a>p>span {
+				background-color: red;
+			}
+			
+			.right-box>ul>li:nth-child(3)>a>p>span {
+				background-color: orange;
+			}
+			.right-box>ul>li:nth-child(4) {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(4)>a {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(4)>a>p {
+				color: black;
+				background-color: white;
+			}
+			
+			.right-box>ul>li:nth-child(4)>a>p>span {
+				color: white;
+				background-color: white;
+				background-image: url(img/icon-rank-item.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.right-box>ul>li:nth-child(5) {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(5)>a {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(5)>a>p {
+				color: black;
+				background-color: white;
+			}
+			
+			.right-box>ul>li:nth-child(5)>a>p>span {
+				color: white;
+				background-color: white;
+				background-image: url(img/icon-rank-item.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.right-box>ul>li:nth-child(6) {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(6)>a {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(6)>a>p {
+				color: black;
+				background-color: white;
+			}
+			
+			.right-box>ul>li:nth-child(6)>a>p>span {
+				color: white;
+				background-color: white;
+				background-image: url(img/icon-rank-item.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.right-box>ul>li:nth-child(7) {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(7)>a {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(7)>a>p {
+				color: black;
+				background-color: white;
+			}
+			
+			.right-box>ul>li:nth-child(7)>a>p>span {
+				color: white;
+				background-color: white;
+				background-image: url(img/icon-rank-item.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.right-box>ul>li:nth-child(8) {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(8)>a {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(8)>a>p {
+				color: black;
+				background-color: white;
+			}
+			
+			.right-box>ul>li:nth-child(8)>a>p>span {
+				color: white;
+				background-color: white;
+				background-image: url(img/icon-rank-item.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.right-box>ul>li:nth-last-child(1) {
+				margin-bottom: 0px;
+			}
+			
+			.right-box>ul>li>img {
+				width: 226px;
+				height: 161px;
+			}
+			
+			.footer {
+				width: 100%;
+				height: 513px;
+				background-color: chocolate;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="header"></header>
+
+		<section class="content">
+
+			<div class="box">
+
+				<div class="left_box">
+
+					<div class="search_result">
+						<h2>
+							<img src="img/icon-search.png" alt="" />
+							搜索结果
+						</h2>
+						<div class="search_res_no">
+							<div class="sea_res_div">
+								<img src="img/icon-university.png"/>
+								<p class="sea_res_p1">抱歉，没有找到 ”马化腾演讲“ 相关的内容</p>
+								<p>你可以更换关键字，或观看我们为您推荐的内容</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="reco_course">
+						<h2>
+							推荐课程
+						</h2>
+						<ul>
+							<li>
+								<img src="img/15253166378.jpg" alt="" />
+								<a href="#" class="p1">蔚来李斌：身家百亿，却租房住、开...</a>
+								<p class="p2">30多年前，他是大别山上帮爷爷放牛的儿童；20多年前，北大求学期间，他曾打...</p>
+							</li>
+							<li><img src="img/1524629333722.jpg" alt="" />
+								<a href="#" class="p1">腾大直播间丨下班别走，有一场区...</a>
+								<p class="p2">鹅厂区块链业务总经理教你0基础秒懂区块链.</p>
+							</li>
+							<li><img src="img/1523945477644.jpg" alt="" />
+								<a href="#" class="p1">腾讯8分钟产品课|第六集：危机</a>
+								<p class="p2">移动互联网时代，每一秒都可能发生颠覆性变化。广受用户喜爱的产品，也可能...</p>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="right-box">
+					<h2>
+						<img src="img/icon-rank.png" alt="" />
+						排行榜
+					</h2>
+					<div class="right_button">
+						<span id="left_point"></span>
+						<input type="button" name="" id="rig_but_1" value="最热排行" />
+						<input type="button" name="" id="rig_but_2" value="新课上线" />
+						<span id="right_point"></span>
+					</div>
+					<ul>
+						<li>
+							<a href="#">
+								<img src="img/1452663224623.jpg" alt="" id="rig_img_1" />
+								<p id="rig_p_1"><span>1</span>张小龙：微信四大价值观</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/1510543542104.jpg" alt="" id="rig_img_2" />
+								<p id="rig_p_2"><span>2</span>2017腾讯媒体+峰会</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/1491898954738.jpg" alt="" id="rig_img_3" />
+								<p id="rig_p_3"><span>3</span>【小程序分论坛】2017“互联网+”数字经济峰会</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p id="rig_p_6"><span>4</span>IT领袖巅峰对话：未来下一个风口在哪里？</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p id="rig_p_7"><span>5</span>微信支付对实体商业的价值几何？</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p id="rig_p_8"><span>6</span>江南愤青陈宇：新常态下的理财问题</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p id="rig_p_9"><span>7</span>马化腾：通向互联网未来的七个路标</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p id="rig_p_10"><span>8</span>马化腾：“互联网+”时代，腾讯只做连接器和内容</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+		</section>
+
+		<footer class="footer"></footer>
+	</body>
+	<script type="text/javascript">
+		//		right_button点击事件
+		var rig_btn_1 = document.getElementById("rig_but_1");
+		var rig_btn_2 = document.getElementById("rig_but_2");
+		var rig_img_1 = document.getElementById("rig_img_1");
+		var rig_img_2 = document.getElementById("rig_img_2");
+		var rig_img_3 = document.getElementById("rig_img_3");
+		var rig_p_1 = document.getElementById("rig_p_1");
+		var rig_p_2 = document.getElementById("rig_p_2");
+		var rig_p_3 = document.getElementById("rig_p_3");
+		var rig_p_6 = document.getElementById("rig_p_6");
+		var rig_p_7 = document.getElementById("rig_p_7");
+		var rig_p_8 = document.getElementById("rig_p_8");
+		var rig_p_9 = document.getElementById("rig_p_9");
+		var rig_p_10 = document.getElementById("rig_p_10");
+		rig_btn_1.onclick = function() {
+			rig_btn_1.style.borderBottom = "1px solid white";
+			rig_btn_1.style.borderTop = "1px solid gainsboro";
+			rig_btn_1.style.borderRight = "1px solid gainsboro";
+			rig_btn_1.style.borderLeft = "1px solid gainsboro";
+			rig_btn_2.style.borderBottom = "1px solid gainsboro";
+			rig_btn_2.style.borderTop = "1px solid white";
+			rig_btn_2.style.borderRight = "1px solid white";
+			rig_btn_2.style.borderLeft = "1px solid white";
+			rig_img_1.src = 'img/1452663224623.jpg';
+			rig_img_2.src = 'img/1510543542104.jpg';
+			rig_img_3.src = 'img/1491898954738.jpg';
+			rig_p_1.innerHTML = "<span>1</span>张小龙：微信四大价值观";
+			rig_p_2.innerHTML = "<span>2</span>2017腾讯媒体+峰会";
+			rig_p_3.innerHTML = "<span>3</span>【小程序分论坛】2017“互联网+”数字经济峰会";
+			rig_p_6.innerHTML = "<span>6</span>IT领袖巅峰对话：未来下一个风口在哪里？";
+			rig_p_7.innerHTML = "<span>7</span>微信支付对实体商业的价值几何？";
+			rig_p_8.innerHTML = "<span>8</span>江南愤青陈宇：新常态下的理财问题";
+			rig_p_9.innerHTML = "<span>9</span>马化腾：通向互联网未来的七个路标";
+			rig_p_10.innerHTML = "<span>10</span>马化腾：“互联网+”时代，腾讯只做连接器和内容";
+		};
+		rig_btn_2.onclick = function() {
+			rig_btn_1.style.borderBottom = "1px solid gainsboro";
+			rig_btn_1.style.borderTop = "1px solid white";
+			rig_btn_1.style.borderRight = "1px solid white";
+			rig_btn_1.style.borderLeft = "1px solid white";
+			rig_btn_2.style.borderBottom = "1px solid white";
+			rig_btn_2.style.borderTop = "1px solid gainsboro";
+			rig_btn_2.style.borderRight = "1px solid gainsboro";
+			rig_btn_2.style.borderLeft = "1px solid gainsboro";
+			rig_img_1.src = 'img/1525428303490.jpg';
+			rig_img_2.src = 'img/1524798089823.jpg';
+			rig_img_3.src = 'img/1524793878231.jpg';
+			rig_p_1.innerHTML = "<span>1</span>陈一丹：新时代的开荒牛精神";
+			rig_p_2.innerHTML = "<span>2</span>程武：新文创时代的数字文化构建";
+			rig_p_3.innerHTML = "<span>3</span>方文山：浅谈互联网时代的传统文化推广";
+			rig_p_6.innerHTML = "<span>6</span>金牌制作人柴智屏：偶像剧不老的秘密";
+			rig_p_7.innerHTML = "<span>7</span>David Goyer：从IP到大荧幕——如何让角色更鲜活";
+			rig_p_8.innerHTML = "<span>8</span>从《阿凡达》到《奇幻森林》——制作视效大片的艺术";
+			rig_p_9.innerHTML = "<span>9</span>“吃鸡之父” 布莱登·格里尼：从游戏玩家到游戏制作人";
+			rig_p_10.innerHTML = "<span>10</span>《英雄联盟》首席设计师“鬼蟹”：创造传奇的英雄角色";
+		};
+	</script>
+
+</html>

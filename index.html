@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			/*header导航条*/
+			
+			.header {
+				width: 100%;
+				height: 78px;
+				background-color: white;
+			}
+			
+			.header .inner {
+				width: 1201px;
+				height: 100%;
+				margin: 0 auto;
+				background-color: white;
+			}
+			
+			.header .inner .logo>a {
+				height: 78px;
+				width: 310px;
+				float: left;
+				display: block;
+				background-image: url(img/logo.png);
+			}
+			
+			.header .inner .nav {
+				/*margin: 0 auto;*/
+			}
+			
+			.header .inner .nav>ul {
+				float: left;
+				width: 616px;
+				height: 78px;
+			}
+			
+			.header .inner .nav>ul>li {
+				width: 98px;
+				height: 78px;
+				list-style: none;
+				float: left;
+				background-image: url(img/nav.png);
+			}
+			
+			.header .inner .nav>ul>li:nth-child(2) {
+				width: 122px;
+				background-position-x: -100px;
+			}
+			
+			.header .inner .nav>ul>li:nth-child(3) {
+				width: 144px;
+				background-position-x: -225px;
+			}
+			
+			.header .inner .nav>ul>li:nth-child(4) {
+				width: 118px;
+				background-position-x: -372px;
+			}
+			
+			.header .inner .nav>ul>li:nth-child(5) {
+				width: 121px;
+				background-position-x: -492px;
+			}
+			/*.header .inner .nav>ul>li:nth-child(6){
+				width: 120px;
+				background-position-x: -612px;
+			}*/
+			
+			.header .inner .nav>ul>li:hover {
+				background-image: url(img/nav-on.png);
+			}
+			
+			.header .inner .nav>ul>li:nth-child(1)>a {
+				width: 98px;
+				height: 78px;
+				display: block;
+			}
+			
+			.header .inner .nav>ul>li:nth-child(2)>a {
+				width: 122px;
+				height: 78px;
+				display: block;
+			}
+			
+			.header .inner .nav>ul>li:nth-child(3)>a {
+				width: 144px;
+				height: 78px;
+				display: block;
+			}
+			
+			.header .inner .nav>ul>li:nth-child(4)>a {
+				width: 118px;
+				height: 78px;
+				display: block;
+			}
+			
+			.header .inner .nav>ul>li:nth-child(5)>a {
+				width: 121px;
+				height: 78px;
+				display: block;
+			}
+			/*.header .inner .nav>ul>li:nth-child(6)>a{
+				width: 120px;
+				height: 78px;
+				display: block;
+			}*/
+			/*搜索和登陆外框*/
+			
+			.header .inner .search_login {
+				width: 142px;
+				height: 78px;
+				float: left;
+				position: relative;
+			}
+			
+			.header .inner .search_login .search_div {
+				display: block;
+				width: 48px;
+				height: 68px;
+				margin-top: 5px;
+				float: left;
+				position: relative;
+			}
+			
+			.header .inner .search_login .search_div .search_img {
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-image: url(img/search.png);
+				display: block;
+			}
+			
+			.header .inner .search_login .search_div:hover .search_img {
+				background-image: url(img/search_hover.png);
+			}
+			
+			.header .inner .search_login .search_div>i {
+				background-color: gainsboro;
+				width: 1px;
+				position: absolute;
+				display: block;
+				height: 30px;
+				left: 68px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			
+			.header .inner .search_login .search_div .search_input {
+				width: 450px;
+				height: 50px;
+				position: relative;
+				background-color: white;
+				border-top: 1px solid orange;
+				top: 100%;
+				display: none;
+				z-index: 999;
+			}
+			
+			.header .inner .search_login .search_div .search_input .search_arrow {
+				width: 11px;
+				height: 7px;
+				display: block;
+				background-image: url(img/top.png);
+				position: absolute;
+				top: -13px;
+				left: 18.5px;
+			}
+			
+			.header .inner .search_login .search_div .search_input .search_role {
+				width: 400px;
+				height: 40px;
+				position: absolute;
+				border: 1px solid gainsboro;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			
+			#search_input_text {
+				width: 280px;
+				height: 30px;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				left: 10px;
+				background-color: white;
+				transform: translateY(-50%);
+			}
+			
+			#search_input_button {
+				width: 70px;
+				height: 40px;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				text-align: center;
+				transform: translateY(-50%);
+			}
+			
+			.header .inner .search_login .login {
+				width: 35px;
+				height: 52px;
+				display: block;
+				position: absolute;
+				right: 0px;
+				top: 50%;
+				transform: translateY(-50%);
+				text-decoration: none;
+			}
+			
+			.header .inner .search_login .login .login_img {
+				width: 30px;
+				height: 30px;
+				display: block;
+				position: relative;
+				background-image: url(img/qq.png);
+				background-size: 100% 100%;
+				top: 0px;
+			}
+			
+			.header .inner .search_login .login>span {
+				width: 30px;
+				height: 17px;
+				font-size: 12px;
+				color: #D3D3D3;
+				text-align: center;
+				display: block;
+			}
+			
+			.header .inner .search_login:hover .login>span {
+				color: #87CEFA;
+			}
+			
+			input {
+				outline: none;
+				border: none;
+			}
+			/*图片滚动模块*/
+			
+			.banner {
+				width: 100%;
+				height: 360px;
+				background-color: whitesmoke;
+			}
+			
+			.banner_show {
+				width: 1440px;
+				height: 360px;
+				position: relative;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			
+			.banner .banner_show .slide_control {
+				width: 5000px;
+				height: 100%;
+				position: relative;
+				transition: all 0.5s;
+			}
+			
+			.banner .banner_show .slide_control>a {
+				width: 1440px;
+				display: block;
+				float: left;
+			}
+			
+			.banner .banner_show .banner_control {
+				position: absolute;
+				bottom: 20px;
+				right: 183px;
+				width: 43px;
+				height: 16px;
+				/*background-color: rgba(0,0,0,0.5);*/
+			}
+			
+			.banner .banner_show .banner_control>ul {
+				width: 43px;
+				height: 16px;
+				float: right;
+				display: block;
+			}
+			
+			.banner .banner_show .banner_control>ul>li {
+				/*去掉点*/
+				list-style: none;
+				/*一行*/
+				float: left;
+				display: block;
+				background-image: url(img/banner-counter.png);
+				/*/设置背景图片一定要给区域*/
+				height: 16px;
+				width: 16px;
+			}
+			
+			.banner .banner_show .banner_control>ul>li:nth-child(1) {
+				width: 16px;
+				background-position-x: -52px;
+			}
+			
+			.banner .banner_show .banner_control>ul>li:nth-last-child(1) {
+				width: 16px;
+				float: right;
+				background-position-x: -78px;
+			}
+			/*live模块*/
+			
+			.live {
+				width: 100%;
+				height: 37px;
+				background-color: antiquewhite;
+				position: relative;
+			}
+			
+			.live .live_speaker {
+				background-image: url(img/icon-speaker.png);
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				left: 438px;
+				top: 50%;
+				float: left;
+				transform: translateY(-50%);
+			}
+			
+			.live .live_p {
+				float: left;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 468px;
+			}
+			
+			.live .live_img {
+				background-image: url(img/icon-live-open.png);
+				display: block;
+				width: 40px;
+				height: 21px;
+				float: left;
+				position: absolute;
+				bottom: 0px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			
+			.content {
+				height: 2055px;
+				width: 100%;
+				background-color: #C0C0C0;
+				padding-top: 20px;
+				/*如果不使用以下盒模型就要减去高度*/
+				/*box-sizing: border-box;*/
+			}
+			/*中间区域*/
+			
+			.content .box {
+				width: 1064px;
+				height: 100%;
+				background-color: #C0C0C0;
+				/*水平居中*/
+				margin: 0 auto;
+			}
+			/*左边区域*/
+			
+			.content .box .left-box {
+				width: 782px;
+				height: 100%;
+				background-color: #C0C0C0;
+				float: left;
+			}
+			
+			.content .left-box>div {
+				margin-bottom: 20px;
+			}
+			
+			.content .left-box>div:nth-last-child(1) {
+				margin-bottom: 0px;
+			}
+			/*热门课程*/
+			
+			.content .hot-class {
+				height: 355px;
+				width: 100%;
+				background-color: gainsboro;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			
+			.hot-class>h2>img {
+				margin-right: 11px;
+			}
+			/*调解文本粗细*/
+			
+			.hot-class>h2 {
+				font-weight: 500;
+				margin-bottom: 20px;
+			}
+			
+			.hot-class>h2>a {
+				float: right;
+				font-size: 14px;
+				/*去掉下划线*/
+				text-decoration: none;
+			}
+			
+			.hot-class>ul>li {
+				/*去掉点*/
+				list-style: none;
+				/*横向排列*/
+				float: left;
+				margin-right: 30px;
+				width: 226px;
+				height: 273px;
+				background-color: white;
+			}
+			
+			.hot-class>ul>li:nth-last-child(1) {
+				margin-right: 0px;
+			}
+			
+			.hot-class li>img {
+				width: 225px;
+				height: 161px;
+				border-bottom: 3px solid gold;
+				margin-bottom: 17px;
+			}
+			
+			.hot-class li:nth-child(2)>img {
+				border-bottom: 3px solid greenyellow;
+			}
+			
+			.hot-class li:nth-child(3)>img {
+				border-bottom: 3px solid #00FFFF;
+			}
+			
+			.hot-class p {
+				margin-left: 13px;
+				width: 203px;
+				word-break: break-word;
+				font-size: 15px;
+			}
+			
+			.hot-class .p1 {
+				width: 203px;
+				text-decoration: none;
+				font-size: 12px;
+				margin-bottom: 13px;
+				margin-left: 13px;
+				display: block;
+				color: black;
+				/*单行省略*/
+				/*overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;*/
+			}
+			
+			.hot-class .p1:hover {
+				color: #87CEFA;
+			}
+			
+			.hot-class .p2 {
+				/*多行省略*/
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				/*代表多少行*/
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+			}
+			/*课程分享*/
+			
+			.content .share-class {
+				height: 499px;
+				width: 100%;
+				background-color: gainsboro;
+			}
+			
+			.share-class>h2 {
+				font-weight: 500;
+				padding: 20px;
+			}
+			
+			.share-class>h2>img {
+				margin-right: 11px;
+			}
+			
+			.share-class>h2>a {
+				float: right;
+				font-size: 14px;
+				text-decoration: none;
+			}
+			
+			.share-class>ul>li {
+				list-style: none;
+				display: block;
+				background-color: white;
+				height: 127px;
+				width: 740px;
+				margin-left: 20px;
+				margin-bottom: 20px;
+			}
+			
+			.share-class>ul>li:nth-child(1) {
+				background-image: url(img/icon-at.png);
+				background-position: right top;
+				background-repeat: no-repeat;
+			}
+			
+			.share-class>ul>li:nth-child(2) {
+				background-image: url(img/icon-video.png);
+				background-position: right top;
+				background-repeat: no-repeat;
+			}
+			
+			.share-class>ul>li:nth-child(3) {
+				background-image: url(img/icon-laptop.png);
+				background-position: right top;
+				background-repeat: no-repeat;
+			}
+			
+			.share-class .share_block {
+				margin-left: 20px;
+				float: left;
+				height: 87px;
+				margin-top: 20px;
+			}
+			
+			.share-class .share_ul_li_a {
+				text-decoration: none;
+				color: black;
+				font-size: 15px;
+			}
+			
+			.share-class .share_ul_li_img {
+				width: 123px;
+				height: 87px;
+				margin: 20px;
+				float: left;
+			}
+			
+			.share-class .share_block .share_ul_li_time {
+				background-image: url(img/icons.png);
+				background-repeat: no-repeat;
+				width: 200px;
+				height: 20px;
+				padding-left: 15px;
+				margin-bottom: 10px;
+				margin-top: 10px;
+				display: block;
+				background-position-y: -1px;
+			}
+			
+			.share-class .share_block .share_ul_li_p {
+				height: 20px;
+			}
+			/*特殊课程*/
+			
+			.content .spec-class {
+				height: 355px;
+				width: 100%;
+				background-color: gainsboro;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			
+			.spec-class>h2>img {
+				margin-right: 11px;
+			}
+			/*调解文本粗细*/
+			
+			.spec-class>h2 {
+				font-weight: 500;
+				margin-bottom: 20px;
+			}
+			
+			.spec-class>h2>a {
+				float: right;
+				font-size: 14px;
+				/*去掉下划线*/
+				text-decoration: none;
+			}
+			
+			.spec-class>ul>li {
+				/*去掉点*/
+				list-style: none;
+				/*横向排列*/
+				float: left;
+				margin-right: 30px;
+				width: 226px;
+				height: 273px;
+				background-color: white;
+			}
+			
+			.spec-class>ul>li:nth-last-child(1) {
+				margin-right: 0px;
+			}
+			
+			.spec-class li>img {
+				width: 225px;
+				height: 161px;
+				border-bottom: 3px solid gold;
+				margin-bottom: 17px;
+			}
+			
+			.spec-class li:nth-child(2)>img {
+				border-bottom: 3px solid greenyellow;
+			}
+			
+			.spec-class li:nth-child(3)>img {
+				border-bottom: 3px solid #00FFFF;
+			}
+			
+			.spec-class p {
+				margin-left: 13px;
+				width: 203px;
+				word-break: break-word;
+				font-size: 15px;
+			}
+			
+			.spec-class .p1 {
+				width: 203px;
+				text-decoration: none;
+				font-size: 12px;
+				margin-bottom: 13px;
+				margin-left: 13px;
+				display: block;
+				color: black;
+				/*单行省略*/
+				/*overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;*/
+			}
+			
+			.spec-class .p1:hover {
+				color: #87CEFA;
+			}
+			
+			.spec-class .p2 {
+				/*多行省略*/
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				/*代表多少行*/
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+			}
+			/*精品课程*/
+			
+			.content .exc-class {
+				height: 786px;
+				width: 100%;
+				background-color: gainsboro;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			
+			.exc-class>h2>img {
+				margin-right: 11px;
+			}
+			/*调解文本粗细*/
+			
+			.exc-class>h2 {
+				font-weight: 500;
+				margin-bottom: 20px;
+			}
+			
+			.exc-class>h2>a {
+				float: right;
+				font-size: 14px;
+				/*去掉下划线*/
+				text-decoration: none;
+			}
+			
+			.exc-class>ul>li {
+				list-style: none;
+				width: 352px;
+				height: 355px;
+				background-color: white;
+				float: left;
+			}
+			
+			.exc-class>ul>li:nth-child(1) {
+				margin-bottom: 5px;
+				margin-right: 20px;
+			}
+			
+			.exc-class>ul>li:nth-child(2) {
+				margin-bottom: 5px;
+			}
+			
+			.exc-class>ul>li:nth-child(3) {
+				margin-right: 20px;
+			}
+			
+			.exc-class>ul>li:nth-child(4) {}
+			
+			.exc-class .exc_head {
+				width: 100%;
+				height: 27px;
+				position: relative;
+			}
+			
+			.exc-class .exc_hp {
+				padding-left: 30px;
+				padding-top: 4px;
+				width: 319px;
+				height: 20px;
+				display: block;
+				background-image: url(img/bout-title-bg.png);
+				background-repeat: no-repeat;
+				font-size: 12px;
+			}
+			
+			.exc-class .exc_more {
+				width: 12px;
+				font-size: 12px;
+				position: absolute;
+				top: 10px;
+				right: 20px;
+				text-decoration: none;
+			}
+			
+			.exc-class .exc_img {
+				margin-top: 20px;
+				width: 100%;
+				height: 238px;
+			}
+			
+			.exc-class .exc_a {
+				font-size: 14px;
+				color: black;
+				text-decoration: none;
+			}
+			
+			.exc-class .exc_a:hover {
+				color: #00FFFF;
+			}
+			
+			.exc-class .exc_ep {
+				font-size: 13px;
+				color: #C0C0C0;
+				/*多行省略*/
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				/*代表多少行*/
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+			}
+			
+			.exc-class>ul>li:nth-child(2) .exc_head>p {
+				background-position-y: -24px;
+			}
+			
+			.exc-class>ul>li:nth-child(3) .exc_head>p {
+				background-position-y: -48px;
+			}
+			
+			.exc-class>ul>li:nth-child(4) .exc_head>p {
+				background-position-y: -72px;
+			}
+			/*右边区域*/
+			
+			.content .box .right-box {
+				width: 267px;
+				height: 100%;
+				background-color: white;
+				float: right;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			
+			.right-box>h2>img {
+				margin-right: 11px;
+			}
+			/*调解文本粗细*/
+			
+			.right-box>h2 {
+				font-weight: 500;
+				margin-bottom: 20px;
+			}
+			
+			.right-box .right_button {
+				width: 226px;
+				height: 35px;
+				background-color: white;
+				margin-bottom: 20px;
+				position: relative;
+				padding-top: 3px;
+			}
+			
+			#left_point {
+				display: block;
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				margin-right: 0;
+				left: 5px;
+				bottom: 0;
+				background-image: url(img/icons.png);
+				background-position-y: -35px;
+				margin-right: 10px;
+			}
+			
+			#right_point {
+				display: block;
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				background-image: url(img/icons.png);
+				background-position-y: -35px;
+				margin-right: 8px;
+			}
+			
+			#rig_but_1 {
+				text-align: center;
+				width: 101.5px;
+				font-size: 13px;
+				height: 32px;
+				display: block;
+				background-color: white;
+				float: left;
+				margin-left: 10px;
+				border-top: 1px solid gainsboro;
+				border-left: 1px solid gainsboro;
+				border-right: 1px solid gainsboro;
+				border-bottom: 1px solid white;
+			}
+			
+			#rig_but_2 {
+				text-align: center;
+				width: 101.5px;
+				font-size: 13px;
+				height: 32px;
+				display: block;
+				background-color: white;
+				float: left;
+				border-top: 1px solid white;
+				border-left: 1px solid white;
+				border-right: 1px solid white;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.right-box>ul>li {
+				list-style: none;
+				width: 226px;
+				height: 161px;
+				margin-bottom: 22px;
+				position: relative;
+			}
+			
+			.right-box>ul>li>a {
+				width: 226px;
+				display: block;
+				height: 161px;
+				margin-bottom: 22px;
+				position: relative;
+			}
+			
+			.right-box>ul>li>a>img {
+				width: 226px;
+				height: 161px;
+			}
+			
+			.right-box>ul>li>a>p {
+				width: 226px;
+				height: 25px;
+				position: absolute;
+				color: white;
+				bottom: 0;
+				left: 0;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+			
+			.right-box li>a>p>span {
+				width: 20px;
+				height: 25px;
+				background-color: gold;
+				/*span没有区域*/
+				display: inline-block;
+				/*文本居中*/
+				text-align: center;
+				line-height: 25px;
+				margin-right: 5px;
+			}
+			
+			.right-box>ul>li:nth-child(2)>a>p>span {
+				background-color: red;
+			}
+			
+			.right-box>ul>li:nth-child(3)>a>p>span {
+				background-color: orange;
+			}
+			
+			.right-box>ul>li:nth-child(4)>a>p>span {
+				background-color: #7B68EE;
+			}
+			
+			.right-box>ul>li:nth-child(5)>a>p>span {
+				background-color: #00FFFF;
+			}
+			
+			.right-box>ul>li:nth-child(6) {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(6)>a {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(6)>a>p {
+				color: black;
+				background-color: white;
+			}
+			
+			.right-box>ul>li:nth-child(6)>a>p>span {
+				color: white;
+				background-color: white;
+				background-image: url(img/icon-rank-item.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.right-box>ul>li:nth-child(7) {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(7)>a {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(7)>a>p {
+				color: black;
+				background-color: white;
+			}
+			
+			.right-box>ul>li:nth-child(7)>a>p>span {
+				color: white;
+				background-color: white;
+				background-image: url(img/icon-rank-item.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.right-box>ul>li:nth-child(8) {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(8)>a {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(8)>a>p {
+				color: black;
+				background-color: white;
+			}
+			
+			.right-box>ul>li:nth-child(8)>a>p>span {
+				color: white;
+				background-color: white;
+				background-image: url(img/icon-rank-item.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.right-box>ul>li:nth-child(9) {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(9)>a {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(9)>a>p {
+				color: black;
+				background-color: white;
+			}
+			
+			.right-box>ul>li:nth-child(9)>a>p>span {
+				color: white;
+				background-color: white;
+				background-image: url(img/icon-rank-item.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.right-box>ul>li:nth-child(10) {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(10)>a {
+				height: 25px;
+			}
+			
+			.right-box>ul>li:nth-child(10)>a>p {
+				color: black;
+				background-color: white;
+			}
+			
+			.right-box>ul>li:nth-child(10)>a>p>span {
+				color: white;
+				background-color: white;
+				background-image: url(img/icon-rank-item.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.right-box>ul>li:nth-last-child(1) {
+				margin-bottom: 0px;
+			}
+			
+			.right-box>ul>li>img {
+				width: 226px;
+				height: 161px;
+			}
+			
+			.rig_cen_div {
+				width: 226px;
+				height: 345px;
+				margin-top: 30px;
+				position: relative;
+			}
+			
+			#rig_cen_div_a {
+				width: 226px;
+				height: 160px;
+				background-image: url(img/1437012075279.png);
+				display: block;
+				margin-bottom: 10px;
+			}
+			
+			#rig_cen_div_span {
+				background-image: url(img/icon-mark.png);
+				width: 24px;
+				height: 24px;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: -12px;
+			}
+			
+			#rig_cen_div_p1 {
+				margin-bottom: 12px;
+				font-size: 20px;
+			}
+			
+			#rig_cen_div_p2 {
+				font-size: 13px;
+			}
+			
+			#rig_bot_div {
+				margin-top: 20px;
+				width: 229px;
+				height: 226px;
+			}
+			
+			#rig_bot_div>h2 {
+				font-weight: 500;
+			}
+			
+			#rig_bot_div>h2>img {
+				margin-right: 20px;
+			}
+			
+			#rig_bot_p1 {
+				margin-top: 20px;
+				font-size: 14px;
+			}
+			
+			#rig_bot_p2 {
+				font-size: 15px;
+				margin-top: 10px;
+			}
+			
+			#rig_bot_inline {
+				width: 201px;
+				height: 118px;
+				text-align: center;
+				background-color: white;
+				position: relative;
+				margin-top: 20px;
+			}
+			
+			#rig_bot_p3 {
+				font-size: 35px;
+			}
+			
+			#rig_bot_inline>a {
+				background-image: url(img/exam-btn.png);
+				width: 160px;
+				height: 47px;
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			
+			.footer {
+				width: 100%;
+				height: 513px;
+				background-color: white;
+				border-top: 3px solid #98FB98;
+			}
+			
+			.footer .fot_div {
+				width: 900px;
+				height: 100%;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			.footer .fot_div .open_platform {
+				width: 724px;
+				height: 157px;
+				position: relative;
+				padding: 20px;
+			}
+			
+			.footer .fot_div .open_platform>ul {
+				width: 712px;
+				height: 132px;
+				display: block;
+			}
+			
+			.footer .fot_div .open_platform>ul>li {
+				list-style: none;
+				float: left;
+				width: 80px;
+				height: 30px;
+				display: block;
+				margin-left: 30px;
+				margin-top: 10px;
+			}
+			
+			.footer .fot_div .open_platform>ul>li>a {
+				width: 80px;
+				height: 30px;
+				display: block;
+				background-color: pink;
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(1)>a {
+				background-image: url(img/ke.png);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(2)>a {
+				background-image: url(img/hitem3.jpg);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(3)>a {
+				background-image: url(img/ieg.png);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(4)>a {
+				background-image: url(img/cloud.png);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(5)>a {
+				background-image: url(img/hitem6.jpg);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(6)>a {
+				background-image: url(img/hitem1.jpg);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(7)>a {
+				background-image: url(img/hitem8.jpg);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(8)>a {
+				background-image: url(img/hitem9.jpg);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(9)>a {
+				background-image: url(img/logo_bigdata.png);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(10)>a {
+				background-image: url(img/link_open.png);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(11)>a {
+				background-image: url(img/logo_guangdiantong.png);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(12)>a {
+				background-image: url(img/bugly_logo.jpg);
+				background-size: 100% 100%;
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(13)>a {
+				background-image: url(img/wetest_logo.png);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(14)>a {
+				background-image: url(img/meia.png);
+			}
+			
+			.footer .fot_div .open_platform>ul>li:nth-child(15)>a {
+				text-decoration: none;
+				width: 80px;
+				height: 0;
+				text-align: center;
+				font-size: 12px;
+			}
+			
+			.footer .fot_div .listen_weibo {
+				width: 110px;
+				height: 60px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 20px;
+			}
+			
+			.footer .fot_div .listen_weibo>a {
+				width: 105px;
+				height: 30px;
+				display: block;
+				background-color: pink;
+				margin-top: 10px;
+				background-image: url(img/opentweibo.png);
+			}
+			
+			.footer .fot_div .atten_space {
+				width: 110px;
+				height: 60px;
+				position: absolute;
+				top: 110px;
+				right: 0;
+				padding: 20px;
+			}
+			
+			.footer .fot_div .atten_space>a {
+				width: 105px;
+				height: 30px;
+				display: block;
+				background-color: pink;
+				margin-top: 10px;
+				background-image: url(img/openzone.png);
+			}
+			
+			.footer .fot_div .partner {
+				width: 724px;
+				height: 157px;
+				position: relative;
+				padding: 20px;
+			}
+			
+			.footer .fot_div .partner>ul {
+				width: 712px;
+				height: 132px;
+				display: block;
+			}
+			
+			.footer .fot_div .partner>ul>li {
+				list-style: none;
+				float: left;
+				width: 80px;
+				height: 30px;
+				display: block;
+				margin-left: 30px;
+				margin-top: 10px;
+			}
+			
+			.footer .fot_div .partner>ul>li>a {
+				width: 100px;
+				display: block;
+				text-align: left;
+				text-decoration: none;
+				font-size: 13px;
+			}
+			
+			.fot_end {
+				width: 100%;
+				height: 110px;
+				background-color: gray;
+				bottom: 0;
+			}
+			
+			.fot_end>p {
+				text-align: center;
+			}
+			
+			.fot_end .fot_end_role{
+				text-align: center;
+			}
+			.fot_end .fot_end_role>a{
+				text-decoration: none;
+				font-size: 14px;
+				color: black;
+			}
+			.fot_end .fot_end_p2 {
+				margin-top: 10px;
+				font-size: 12px;
+			}
+			
+			.fot_end .fot_end_p3 {
+				margin-top: 10px;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="header">
+
+			<div class="inner">
+
+				<div class="logo">
+					<a href="http://daxue.qq.com/"></a>
+				</div>
+
+				<div class="nav">
+					<ul>
+						<li>
+							<a href="http://daxue.qq.com/"></a>
+						</li>
+						<li>
+							<a href="http://daxue.qq.com/wechat"></a>
+						</li>
+						<li>
+							<a href="http://daxue.qq.com/open"></a>
+						</li>
+						<li>
+							<a href="http://edu.tencentads.com/"></a>
+						</li>
+						<li>
+							<a href="http://daxue.qq.com/game"></a>
+						</li>
+						<!--<li><a href="http://www.baidu.com"></a></li>-->
+					</ul>
+				</div>
+
+				<div class="search_login">
+					<a class="search_div" href="#">
+						<div class="search_img"></div>
+						<i></i>
+						<div class="search_input">
+							<div class="search_arrow"></div>
+							<div class="search_role">
+								<form action="" method="get">
+									<input type="text" name="keyword" id="search_input_text" value="" placeholder="" />
+									<input type="submit" name="search_input_button" id="search_input_button" value="搜索" />
+								</form>
+							</div>
+						</div>
+					</a>
+					<a class="login" href="#">
+						<div class="login_img"></div>
+						<span>登陆</span>
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="banner">
+			<div class="banner_show">
+				<div class="slide_control">
+					<a href="#" class="slide_img1">
+						<img src="img/1525324523675.jpg" width="1440px" height="360px" />
+					</a>
+					<a href="#" class="slide_img2">
+						<img src="img/1523945471148.jpg" width="1440px" height="360px" />
+					</a>
+				</div>
+				<div class="banner_control">
+					<ul>
+						<li class="banner_control_1"></li>
+						<li class="banner_control_2"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="live">
+			<div class="live_speaker"></div>
+			<p class="live_p">直播预告：直播还没开始哦，看看我们的推荐吧！</p>
+			<a class="live_img" href="#"></a>
+		</div>
+
+		<div class="content">
+			<div class="box">
+
+				<div class="left-box">
+
+					<div class="hot-class">
+						<!--整个页面H1只能出现一次-->
+						<h2>
+							<img src="img/icon-lesson.png" alt="" />
+							热门课程
+							<a href="#">more</a>
+						</h2>
+
+						<ul>
+							<li>
+								<img src="img/15253166378.jpg" alt="" />
+								<a href="#" class="p1">蔚来李斌：身家百亿，却租房住、开...</a>
+								<p class="p2">30多年前，他是大别山上帮爷爷放牛的儿童；20多年前，北大求学期间，他曾打...</p>
+							</li>
+							<li><img src="img/1524629333722.jpg" alt="" />
+								<a href="#" class="p1">腾大直播间丨下班别走，有一场区...</a>
+								<p class="p2">鹅厂区块链业务总经理教你0基础秒懂区块链.</p>
+							</li>
+							<li><img src="img/1523945477644.jpg" alt="" />
+								<a href="#" class="p1">腾讯8分钟产品课|第六集：危机</a>
+								<p class="p2">移动互联网时代，每一秒都可能发生颠覆性变化。广受用户喜爱的产品，也可能...</p>
+							</li>
+						</ul>
+					</div>
+
+					<div class="share-class">
+						<h2>
+							<img src="img/icon-share.png" alt="" />
+							干货分享
+							<a href="#">more</a>
+						</h2>
+
+						<ul>
+							<li>
+								<img src="img/1524639477578.jpg" class="share_ul_li_img" />
+								<div class="share_block">
+									<a href="#" class="share_ul_li_a">这可能是腾讯“生态圈”企业之间最剑拔弩张的一次</a>
+									<p class="share_ul_li_time">2018-04-25 14:58</p>
+									<p class="share_ul_li_p">这个圈子不一般，学知识、做公益，样样行！</p>
+								</div>
+							</li>
+							<li>
+								<img src="img/1524639186589.jpg" class="share_ul_li_img" />
+								<div class="share_block">
+									<a href="#" class="share_ul_li_a">鹅厂最看中的一项通用能力，你具备吗？</a>
+									<p class="share_ul_li_time">2018-04-25 14:53</p>
+									<p class="share_ul_li_p">掌握这6招，同龄人焦虑？不存在的~</p>
+								</div>
+							</li>
+							<li>
+								<img src="img/1523608616312.png" class="share_ul_li_img" />
+								<div class="share_block">
+									<a href="#" class="share_ul_li_a">马化腾：腾讯定位“数字化助手” 专心只做三件事</a>
+									<p class="share_ul_li_time">2018-04-13 16:44</p>
+									<p class="share_ul_li_p">马化腾用“一三五七”四个数字，分享了他对“互联网+”的进...</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="spec-class">
+						<!--整个页面H1只能出现一次-->
+						<h2>
+							<img src="img/icon-lesson.png" alt="" />
+							专题课程
+							<a href="#">more</a>
+						</h2>
+
+						<ul>
+							<li>
+								<img src="img/152479772427.jpg" alt="" />
+								<a href="#" class="p1">UP2018腾讯新文创生态大会</a>
+								<p class="p2">2018年4月22至23日，主题为“向爱而生”的UP2018腾讯...</p>
+							</li>
+							<li><img src="img/150892203911.png" alt="" />
+								<a href="#" class="p1">腾讯8分钟产品课</a>
+								<p class="p2">腾讯迄今为止最系统的产品心得总结，没有之一。</p>
+							</li>
+							<li><img src="img/1490183749136.jpg" alt="" />
+								<a href="#" class="p1">腾大直播间</a>
+								<p class="p2">腾大直播间是腾讯大学首档自制互动直播节目。每次直...</p>
+							</li>
+						</ul>
+					</div>
+
+					<div class="exc-class">
+						<h2>
+							<img src="img/icon-lesson.png" alt="" />
+							精品课程
+							<a href="#">more</a>
+						</h2>
+						<ul>
+							<li>
+								<div class="exc_head">
+									<p class="exc_hp">产品-营销
+										<a href="#" class="exc_more">more</a>
+									</p>
+								</div>
+								<img src="img/1516779250402.jpg" alt="" class="exc_img" />
+								<a href="#" class="exc_a">天天P图负责人Rainbow：AI时代的图像乐趣</a>
+								<p class="exc_ep">2018年1月，中国产品经理大会在上海召开，天天P图负责人Rainbow以“AI时代的图像乐趣”为题在活动中...</p>
+							</li>
+							<li>
+								<div class="exc_head">
+									<p class="exc_hp">设计-用研
+										<a href="#" class="exc_more">more</a>
+									</p>
+								</div>
+								<img src="img/1521099160596.png" alt="" class="exc_img" />
+								<a href="#" class="exc_a">马岩松：我设计的不仅是建筑，更是一座城市的灵魂。</a>
+								<p class="exc_ep">自梦露大厦之后，马岩松以一系列作品胡同泡泡、朝阳公园广场、卢卡斯叙事艺术博物馆等展现他对未来城市...</p>
+							</li>
+							<li>
+								<div class="exc_head">
+									<p class="exc_hp">技术-运维
+										<a href="#" class="exc_more">more</a>
+									</p>
+								</div>
+								<img src="img/1509087033739.png" alt="" class="exc_img" />
+								<a href="#" class="exc_a">腾讯冯牮：基于卷积神经网络在手机端实现文档检测</a>
+								<p class="exc_ep">本次分享主要介绍了如何利用卷积神经网络在手机端实现检测文档四边形区域的功能，包括训练样本的准备和...</p>
+							</li>
+							<li>
+								<div class="exc_head">
+									<p class="exc_hp">行业-创业
+										<a href="#" class="exc_more">more</a>
+									</p>
+								</div>
+								<img src="img/1525428303490.jpg" alt="" class="exc_img" />
+								<a href="#" class="exc_a">陈一丹：新时代的开荒牛精神</a>
+								<p class="exc_ep">从初来深圳的懵懂少年，到见证深圳飞速发展的青年学子；从腾讯，到互联网公益事业，再到教育这一生的志...</p>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+				<aside class="right-box">
+					<h2>
+						<img src="img/icon-rank.png" alt="" />
+						排行榜
+					</h2>
+					<div class="right_button">
+						<span id="left_point"></span>
+						<input type="button" name="" id="rig_but_1" value="最热排行" />
+						<input type="button" name="" id="rig_but_2" value="新课上线" />
+						<span id="right_point"></span>
+					</div>
+					<ul>
+						<li>
+							<a href="#">
+								<img src="img/1452663224623.jpg" alt="" id="rig_img_1" />
+								<p id="rig_p_1"><span>1</span>张小龙：微信四大价值观</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/1510543542104.jpg" alt="" id="rig_img_2" />
+								<p id="rig_p_2"><span>2</span>2017腾讯媒体+峰会</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/1491898954738.jpg" alt="" id="rig_img_3" />
+								<p id="rig_p_3"><span>3</span>【小程序分论坛】2017“互联网+”数字经济峰会</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/1482897982349.jpg" alt="" id="rig_img_4" />
+								<p id="rig_p_4"><span>4</span>张小龙：小程序正式发布，开启移动应用新时代</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/1416453832912.png" alt="" id="rig_img_5" />
+								<p id="rig_p_5"><span>5</span>马化腾：腾讯将专注于做互联网的连接器</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p id="rig_p_6"><span>6</span>IT领袖巅峰对话：未来下一个风口在哪里？</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p id="rig_p_7"><span>7</span>微信支付对实体商业的价值几何？</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p id="rig_p_8"><span>8</span>江南愤青陈宇：新常态下的理财问题</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p id="rig_p_9"><span>9</span>马化腾：通向互联网未来的七个路标</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p id="rig_p_10"><span>10</span>马化腾：“互联网+”时代，腾讯只做连接器和内容</p>
+							</a>
+						</li>
+					</ul>
+
+					<div class="rig_cen_div">
+						<a href="#" id="rig_cen_div_a"><span id="rig_cen_div_span"></span></a>
+						<p id="rig_cen_div_p1">腾讯大学</p>
+						<p id="rig_cen_div_p2">腾讯大学作为腾讯特色的学习交流平台，服务于腾讯合作伙伴及用户，面向互联网产业链，传播腾讯经验，分享行业知识及优秀实践，助力合作伙伴成长，推动开放共赢的互联网生态圈的建立。</p>
+					</div>
+
+					<div id="rig_bot_div">
+						<h2>
+						<img src="img/icon-phone.png" alt="" />
+						联系我们
+					    </h2>
+						<p id="rig_bot_p1">合作：university@tencent.com</p>
+						<p id="rig_bot_p2">QQ：2813343187</p>
+						<div id="rig_bot_inline">
+							<p id="rig_bot_p3">在线考试</p>
+							<a href="#"></a>
+						</div>
+					</div>
+				</aside>
+
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="fot_div">
+				<div class="open_platform">
+					<p>开放平台</p>
+					<ul>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#">更多</a>
+						</li>
+					</ul>
+				</div>
+				<div class="listen_weibo">
+					<p>收听微博</p>
+					<a href=""></a>
+				</div>
+				<div class="atten_space">
+					<p>开放空间</p>
+					<a href=""></a>
+				</div>
+				<div class="partner">
+					<p>合作伙伴</p>
+					<ul>
+						<li>
+							<a href="#">腾讯云云+社区</a>
+						</li>
+						<li>
+							<a href="#">TechWeb</a>
+						</li>
+						<li>
+							<a href="#">腾讯Alloyteam</a>
+						</li>
+						<li>
+							<a href="#">CSDN</a>
+						</li>
+						<li>
+							<a href="#">36Kr</a>
+						</li>
+						<li>
+							<a href="#">DoNews</a>
+						</li>
+						<li>
+							<a href="#">APP游戏部落</a>
+						</li>
+						<li>
+							<a href="#">天极网</a>
+						</li>
+						<li>
+							<a href="#">凤凰网科技频道</a>
+						</li>
+						<li>
+							<a href="#">易观网</a>
+						</li>
+						<li>
+							<a href="#">馒头商学院</a>
+						</li>
+						<li>
+							<a href="#">雷锋网</a>
+						</li>
+						<li>
+							<a href="#">飞象网</a>
+						</li>
+						<li>
+							<a href="#">数码港</a>
+						</li>
+						<li>
+							<a href="#">艾瑞网</a>
+						</li>
+						<li>
+							<a href="#">落伍者</a>
+						</li>
+						<li>
+							<a href="#">LAMP人</a>
+						</li>
+						<li>
+							<a href="#">QQ浏览器</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="fot_end">
+			<div class="fot_end_role">
+				<a href="#">服务协议</a>
+				|
+				<a href="#">隐私政策</a>
+				|
+				<a href="#">版权保护投诉指引</a>
+			</div>
+			<p class="fot_end_p2">Copyright © 1998 - 2018 Tencent. All Rights Reserved.</p>
+			<p class="fot_end_p3">腾讯公司 版权所有</p>
+		</div>
+
+	</body>
+
+	<script type="text/javascript">
+		//		header 导航栏模块js
+		var search_div = document.getElementsByClassName("search_div")[0];
+		var search_input = document.getElementsByClassName("search_input")[0];
+		var search_img = document.getElementsByClassName("search_img")[0];
+		search_div.onmouseenter = function() {
+			if(getComputedStyle(search_input)["display"] == "none") {
+				search_input.style.display = "block";
+			} else {
+				search_input.style.display = "none";
+			}
+		};
+		search_div.onmouseleave = function() {
+			if(getComputedStyle(search_input)["display"] == "block") {
+				search_input.style.display = "none";
+			} else {
+				search_input.style.display = "block";
+			}
+		};
+		//      bannder 图片滑动模块js
+		var slide_control = document.getElementsByClassName("slide_control")[0];
+		var banner_control_1 = document.getElementsByClassName("banner_control_1")[0];
+		var banner_control_2 = document.getElementsByClassName("banner_control_2")[0];
+		var time = null;
+		var num = 1;
+		var dex = 1;
+		var left = 0;
+		//		自动滑动
+		banner_control_1.style.backgroundImage = 'url(img/banner-counter-on.png)';
+		timer = setInterval(function() {
+			num = num % 2;
+			left = (num - 1) * (1440);
+			if(dex == 1) {
+				banner_control_1.style.backgroundImage = 'url(img/banner-counter-on.png)';
+				banner_control_2.style.backgroundImage = 'url(img/banner-counter.png)';
+			}
+			if(dex == 2) {
+				banner_control_1.style.backgroundImage = 'url(img/banner-counter.png)';
+				banner_control_2.style.backgroundImage = 'url(img/banner-counter-on.png)';
+				dex = 0;
+			}
+			slide_control.style.left = left + "px";
+			num = num + 1;
+			dex = dex + 1;
+		}, 5000);
+		//     点击控制
+		banner_control_1.onmouseenter = function() {
+			//			关闭定时器
+			clearInterval(timer);
+			slide_control.style.left = "0px";
+			banner_control_1.style.backgroundImage = 'url(img/banner-counter-on.png)';
+			banner_control_2.style.backgroundImage = 'url(img/banner-counter.png)';
+		};
+		banner_control_1.onmouseleave = function() {
+			num = 1;
+			dex = 1;
+			left = 0;
+			//		     重启定时器
+			timer = setInterval(function() {
+				num = num % 2;
+				left = (num - 1) * (1440);
+				if(dex == 1) {
+					banner_control_1.style.backgroundImage = 'url(img/banner-counter-on.png)';
+					banner_control_2.style.backgroundImage = 'url(img/banner-counter.png)';
+				}
+				if(dex == 2) {
+					banner_control_1.style.backgroundImage = 'url(img/banner-counter.png)';
+					banner_control_2.style.backgroundImage = 'url(img/banner-counter-on.png)';
+					dex = 0;
+				}
+				slide_control.style.left = left + "px";
+				num = num + 1;
+				dex = dex + 1;
+			}, 5000);
+		};
+		banner_control_2.onmouseenter = function() {
+			//			关闭定时器
+			clearInterval(timer);
+			slide_control.style.left = "-1440px";
+			banner_control_1.style.backgroundImage = 'url(img/banner-counter.png)';
+			banner_control_2.style.backgroundImage = 'url(img/banner-counter-on.png)';
+		};
+		banner_control_2.onmouseleave = function() {
+			num = 1;
+			dex = 1;
+			left = 0;
+			//		    重启定时器
+			timer = setInterval(function() {
+				num = num % 2;
+				left = (num - 1) * (1440);
+				if(dex == 1) {
+					banner_control_1.style.backgroundImage = 'url(img/banner-counter-on.png)';
+					banner_control_2.style.backgroundImage = 'url(img/banner-counter.png)';
+				}
+				if(dex == 2) {
+					banner_control_1.style.backgroundImage = 'url(img/banner-counter.png)';
+					banner_control_2.style.backgroundImage = 'url(img/banner-counter-on.png)';
+					dex = 0;
+				}
+				slide_control.style.left = left + "px";
+				num = num + 1;
+				dex = dex + 1;
+			}, 5000);
+		};
+
+		//		right_button点击事件
+		var rig_btn_1 = document.getElementById("rig_but_1");
+		var rig_btn_2 = document.getElementById("rig_but_2");
+		var rig_img_1 = document.getElementById("rig_img_1");
+		var rig_img_2 = document.getElementById("rig_img_2");
+		var rig_img_3 = document.getElementById("rig_img_3");
+		var rig_img_4 = document.getElementById("rig_img_4");
+		var rig_img_5 = document.getElementById("rig_img_5");
+		var rig_p_1 = document.getElementById("rig_p_1");
+		var rig_p_2 = document.getElementById("rig_p_2");
+		var rig_p_3 = document.getElementById("rig_p_3");
+		var rig_p_4 = document.getElementById("rig_p_4");
+		var rig_p_5 = document.getElementById("rig_p_5");
+		var rig_p_6 = document.getElementById("rig_p_6");
+		var rig_p_7 = document.getElementById("rig_p_7");
+		var rig_p_8 = document.getElementById("rig_p_8");
+		var rig_p_9 = document.getElementById("rig_p_9");
+		var rig_p_10 = document.getElementById("rig_p_10");
+		rig_btn_1.onclick = function() {
+			rig_btn_1.style.borderBottom = "1px solid white";
+			rig_btn_1.style.borderTop = "1px solid gainsboro";
+			rig_btn_1.style.borderRight = "1px solid gainsboro";
+			rig_btn_1.style.borderLeft = "1px solid gainsboro";
+			rig_btn_2.style.borderBottom = "1px solid gainsboro";
+			rig_btn_2.style.borderTop = "1px solid white";
+			rig_btn_2.style.borderRight = "1px solid white";
+			rig_btn_2.style.borderLeft = "1px solid white";
+			rig_img_1.src = 'img/1452663224623.jpg';
+			rig_img_2.src = 'img/1510543542104.jpg';
+			rig_img_3.src = 'img/1491898954738.jpg';
+			rig_img_4.src = 'img/1482897982349.jpg';
+			rig_img_5.src = 'img/1416453832912.png';
+			rig_p_1.innerHTML = "<span>1</span>张小龙：微信四大价值观";
+			rig_p_2.innerHTML = "<span>2</span>2017腾讯媒体+峰会";
+			rig_p_3.innerHTML = "<span>3</span>【小程序分论坛】2017“互联网+”数字经济峰会";
+			rig_p_4.innerHTML = "<span>4</span>张小龙：小程序正式发布，开启移动应用新时代";
+			rig_p_5.innerHTML = "<span>5</span>马化腾：腾讯将专注于做互联网的连接器";
+			rig_p_6.innerHTML = "<span>6</span>IT领袖巅峰对话：未来下一个风口在哪里？";
+			rig_p_7.innerHTML = "<span>7</span>微信支付对实体商业的价值几何？";
+			rig_p_8.innerHTML = "<span>8</span>江南愤青陈宇：新常态下的理财问题";
+			rig_p_9.innerHTML = "<span>9</span>马化腾：通向互联网未来的七个路标";
+			rig_p_10.innerHTML = "<span>10</span>马化腾：“互联网+”时代，腾讯只做连接器和内容";
+		};
+		rig_btn_2.onclick = function() {
+			rig_btn_1.style.borderBottom = "1px solid gainsboro";
+			rig_btn_1.style.borderTop = "1px solid white";
+			rig_btn_1.style.borderRight = "1px solid white";
+			rig_btn_1.style.borderLeft = "1px solid white";
+			rig_btn_2.style.borderBottom = "1px solid white";
+			rig_btn_2.style.borderTop = "1px solid gainsboro";
+			rig_btn_2.style.borderRight = "1px solid gainsboro";
+			rig_btn_2.style.borderLeft = "1px solid gainsboro";
+			rig_img_1.src = 'img/1525428303490.jpg';
+			rig_img_2.src = 'img/1524798089823.jpg';
+			rig_img_3.src = 'img/1524793878231.jpg';
+			rig_img_4.src = 'img/1524793887256.jpg';
+			rig_img_5.src = 'img/1524793871235.jpg';
+			rig_p_1.innerHTML = "<span>1</span>陈一丹：新时代的开荒牛精神";
+			rig_p_2.innerHTML = "<span>2</span>程武：新文创时代的数字文化构建";
+			rig_p_3.innerHTML = "<span>3</span>方文山：浅谈互联网时代的传统文化推广";
+			rig_p_4.innerHTML = "<span>4</span>马伯庸：从读史谈创作——苏轼读史法的写作启发";
+			rig_p_5.innerHTML = "<span>5</span>蝙蝠侠系列开创者：全球化驱动下的数字内容生产";
+			rig_p_6.innerHTML = "<span>6</span>金牌制作人柴智屏：偶像剧不老的秘密";
+			rig_p_7.innerHTML = "<span>7</span>David Goyer：从IP到大荧幕——如何让角色更鲜活";
+			rig_p_8.innerHTML = "<span>8</span>从《阿凡达》到《奇幻森林》——制作视效大片的艺术";
+			rig_p_9.innerHTML = "<span>9</span>“吃鸡之父” 布莱登·格里尼：从游戏玩家到游戏制作人";
+			rig_p_10.innerHTML = "<span>10</span>《英雄联盟》首席设计师“鬼蟹”：创造传奇的英雄角色";
+		};
+		
+		
+	</script>
+
+</html>
